@@ -13,5 +13,12 @@ function Person(){
   this.name= "I am inside function"; // if you create the instance it will be avaibale
   var myname="kiran";//local to the funciton
 }
-var y = new Person();
-console.log(y);
+var p1 = new Person();
+p1.name="Kiran";
+var p2 = new Person();
+p2.name="Ravi";
+
+Person.prototype.gender="M";
+console.log(p1);
+console.log(p2);
+
