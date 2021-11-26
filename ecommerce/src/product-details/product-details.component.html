@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="form-group">
+        <label for="prodcutName" class="form-label mt-4">Name</label>
+        <input type="text" class="form-control" 
+        id="prodcutName" aria-describedby="prodcutName" 
+        placeholder="Enter Product Name"
+        [(ngModel)]="productDetails.name"
+        
+        >
+       
+      </div>
+      <div class="form-group">
+        <label for="prodcutPrice" class="form-label mt-4">Price</label>
+        <input type="text" class="form-control" 
+        id="prodcutPrice" aria-describedby="prodcutPrice" 
+        [(ngModel)]="productDetails.price"
+        placeholder="Enter Product Price">
+       
+      </div>
+      <div class="form-group">
+        <label for="prodcutQuantity" class="form-label mt-4">Quantity</label>
+        <input type="text" 
+        class="form-control" 
+        id="prodcutQuantity" 
+        aria-describedby="prodcutQuantity" 
+        [(ngModel)]="productDetails.quantity"
+        placeholder="Enter Product Quantity">
+       
+      </div>
+</div>
+{{productDetails|json}}

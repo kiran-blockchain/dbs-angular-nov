@@ -1,0 +1,25 @@
+<table class="table tbl-striped">
+    <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Order Qty</th>
+    </thead>
+    <tbody>
+        <tr *ngFor ="let p of products" >
+            <td>{{p.id}}</td>
+            <td>{{p.name}}</td>
+            <td>{{p.price}}</td>
+            <td>{{p.quantityInOrder}}</td>
+            <td><button class="btn btn-primary" 
+                (click)="addToCart(p)">Add To Cart</button></td>
+
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>Total : {{total.totalPrice}}</td>
+            <td>Quanity :{{total.quantity}}</td>
+        </tr>
+    </tbody>
+</table>
