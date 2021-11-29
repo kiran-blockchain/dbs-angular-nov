@@ -16,15 +16,17 @@ export class ProductsComponent {
     products = [{
         name:"iphone",
         id:1,
-        price:1000,
+        price:1000000,
         quantityInOrder:0,
-        totalPrice:0
+        totalPrice:0,
+        date:new Date()
     },
     {
         name:"Samsung",
         id:2,
-        price:2000,
-        quantityInOrder:0
+        price:2000000,
+        quantityInOrder:0,
+        date:new Date()
     }];
 
     addToCart(product:any){

@@ -28,4 +28,7 @@
        
       </div>
 </div>
-{{productDetails|json}}
+<div class="container">
+    <button class="btn btn-primary" (click)="handleToggle()">Toggle</button>
+    <h1 *ngIf="showToggler">Show me</h1>
+</div>

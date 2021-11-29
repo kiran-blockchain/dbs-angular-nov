@@ -13,11 +13,12 @@
       <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav me-auto">
           <li class="nav-item" 
-           *ngFor="let item of navitems">
+           *ngFor="let item of navItems">
             <a class="nav-link active" 
-            href="#">{{item}}
+            [routerLink]="item.path">{{item.display}}
             </a>
           </li>
+          
         </ul>
       
       </div>

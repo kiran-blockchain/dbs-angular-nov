@@ -8,8 +8,9 @@ import {Component} from '@angular/core';
 })
 export class HeaderComponent {
     title="DBS";
-    navitems =["Home",
-    "Sports",
-    "Apparel","Cars","Bikes","Watches"];
-
+    navItems=[{path:"",display:"Home"},
+    {path:"login",display:"Login"},
+    {path:"register",display:"Register"}
+]
+    //TODO implement login based logic
 }

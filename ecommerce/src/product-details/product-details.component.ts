@@ -6,10 +6,14 @@ import {Component} from '@angular/core';
     templateUrl:"./product-details.component.html"
 })
 export class ProductDetailsComponent {
+    showToggler=true;
    productDetails ={
        name:"",
        price:0,
        quantity:0
+   }
+   handleToggle(){
+       this.showToggler=!this.showToggler;
    }
 
 }

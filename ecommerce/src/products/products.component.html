@@ -8,9 +8,10 @@
     <tbody>
         <tr *ngFor ="let p of products" >
             <td>{{p.id}}</td>
-            <td>{{p.name}}</td>
-            <td>{{p.price}}</td>
+            <td>{{p.name|lowercase}}</td>
+            <td>{{p.price|currency}}</td>
             <td>{{p.quantityInOrder}}</td>
+            <td>{{p.date|date:'MM-dd-yyyy hh:mm:ss'}}</td>
             <td><button class="btn btn-primary" 
                 (click)="addToCart(p)">Add To Cart</button></td>
 
@@ -18,7 +19,7 @@
         <tr>
             <td></td>
             <td></td>
-            <td>Total : {{total.totalPrice}}</td>
+            <td>Total : {{total.totalPrice|currency}}</td>
             <td>Quanity :{{total.quantity}}</td>
         </tr>
     </tbody>
