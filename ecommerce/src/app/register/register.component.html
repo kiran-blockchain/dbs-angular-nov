@@ -1,1 +1,43 @@
-<p>register works!</p>
+<div class="container mt-5">
+    <div class="form-group">
+        <label for="email" class="form-label mt-4">Email address</label>
+        <input type="text" class="form-control" id="email" [(ngModel)]="register.email" aria-describedby="email"
+            placeholder="Enter email">
+    </div>
+    <div class="form-group">
+        <label for="username" class="form-label mt-2">UserName</label>
+        <input type="text" class="form-control" id="username" [(ngModel)]="register.username"
+            aria-describedby="username" placeholder="Enter Username">
+    </div>
+    <div class="form-group">
+        <label for="password" class="form-label mt-2">Password</label>
+        <input type="password" class="form-control" id="password" [(ngModel)]="register.password"
+            aria-describedby="password" placeholder="Enter Password">
+    </div>
+    <div class="form-group">
+        <label for="phone" class="form-label mt-2">Phone Number</label>
+        <input type="tel" class="form-control" id="phone" [(ngModel)]="register.phone" aria-describedby="phone"
+            placeholder="Enter Phone Number">
+    </div>
+    <div class="form-group">
+        <label for="country" class="form-label mt-2">Country</label>
+        <select class="form-control" id="country">
+            <option value="">Select Country</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="country" class="form-label mt-2">Age</label>
+        <input type="tel" class="form-control" id="age" [(ngModel)]="register.age" aria-describedby="phone"
+            placeholder="Enter Age">
+    </div>
+    <div class="form-group">
+        <label for="country" class="form-label mt-2">Gender</label>
+        <div>
+            <input type="radio" name="gender" value="M" [(ngModel)]="register.gender"> Male
+            <input type="radio" name="gender" value="F" [(ngModel)]="register.gender"> Female
+        </div>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary" (click)="registerUser()">Register</button>
+    </div>
+</div>
