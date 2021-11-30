@@ -1,6 +1,7 @@
 import { isNgTemplate } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../product.service';
+import { ProductService } from 'src/app/product.service';
+
 
 @Component({
   selector: 'app-products-new',
@@ -19,9 +20,9 @@ export class ProductsNewComponent implements OnInit {
     this.productSvc.getProductsFromApi()
       .then((result: any) => {
         console.log(result);
-        if(result.length>0){
-          result = result.map((item:any)=>{
-            return {...item,inOrder:0}
+        if (result.length > 0) {
+          result = result.map((item: any) => {
+            return { ...item, inOrder: 0 }
           })
         }
         this.productSvc.setProducts(result);
@@ -31,13 +32,23 @@ export class ProductsNewComponent implements OnInit {
         console.log(ex);
       })
   }
-  fetchProductsFromService(){
-    this.products =this.productSvc.getProducts();
+  fetchProductsFromService() {
+    this.products = this.productSvc.getProducts();
   }
 
   ngOnInit(): void {
   }
+  addToCart(p: any) {
+    p.inOrder += 1;
+    this.productSvc.setProducts(this.products)
+  }
+  removeFromCart(p: any) {
+    if (p.inOrder >= 1) {
+      p.inOrder -= 1;
+      this.productSvc.setProducts(this.products)
+    }
 
+  }
   //add to cart
   //remove from cart
   // setProducts always need to updated.

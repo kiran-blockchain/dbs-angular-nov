@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { DataService } from '../data.service';
+import { DataService } from 'src/app/data.service';
+
 
 @Component({
   selector: 'app-register',

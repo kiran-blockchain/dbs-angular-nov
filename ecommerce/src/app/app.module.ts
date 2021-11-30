@@ -1,39 +1,41 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http'
 import {RouterModule} from '@angular/router';
 
-import { ProductDetailsComponent } from 'src/product-details/product-details.component';
+import { ProductDetailsComponent } from 'src/app/products/product-details/product-details.component';
 import { ProductsComponent } from 'src/products/products.component';
 import { HeaderComponent } from '../header/header.component';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
-import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
-import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
-import { ProductsNewComponent } from './products-new/products-new.component';
+
+import { PhonePipe } from './phone.pipe';
+import { ProductsModule } from './products/products.module';
+import { UserModule } from './user/user.module';
+import { LoginComponent } from './user/login/login.component';
+import { RegisterComponent } from './user/register/register.component';
+import { ForgotpasswordComponent } from './user/forgotpassword/forgotpassword.component';
+import { ResetpasswordComponent } from './user/resetpassword/resetpassword.component';
+import { ProfileComponent } from './user/profile/profile.component';
+import { ProductsNewComponent } from './products/products-new/products-new.component';
 
 @NgModule({
   declarations: [
+    //components
+    //pipes
+    //directives
     AppComponent,
     HeaderComponent,
     ProductsComponent,
-    ProductDetailsComponent,
-    LoginComponent,
-    RegisterComponent,
-    ForgotpasswordComponent,
-    ResetpasswordComponent,
-    ProfileComponent,
     HomeComponent,
-    ProductsNewComponent
+    PhonePipe
   ],
   imports: [
+    //external modules or internal moduels
+    ProductsModule,
+    UserModule,
     BrowserModule,
-    FormsModule,
     HttpClientModule,
     RouterModule.forRoot([
       {path:"login",component:LoginComponent},
@@ -46,7 +48,9 @@ import { ProductsNewComponent } from './products-new/products-new.component';
       {path:"",component:HomeComponent}
     ])
   ],
-  providers: [],
+  providers: [
+    //services will go inside the providers
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

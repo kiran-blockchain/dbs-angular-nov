@@ -18,7 +18,11 @@
             [routerLink]="item.path">{{item.display}}
             </a>
           </li>
-          
+          <li><span>{{getTotalProducts()}}</span></li>
+        
+        </ul>
+        <ul class="collapse navbar-collapse" id="navbarColor01">
+          <li class="nav-item"><span>{{mobile|phone:'IN'}}</span></li>
         </ul>
       
       </div>
