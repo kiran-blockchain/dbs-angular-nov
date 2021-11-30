@@ -9,6 +9,7 @@ import {Component} from '@angular/core';
 export class HeaderComponent {
     title="DBS";
     navItems=[{path:"",display:"Home"},
+    {path:"products",display:"Products"},
     {path:"login",display:"Login"},
     {path:"register",display:"Register"}
 ]

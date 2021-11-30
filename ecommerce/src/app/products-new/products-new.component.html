@@ -1,0 +1,22 @@
+<!-- <div class="container"> -->
+    <div class="row mt-5">
+        <div class="col-md-3" *ngFor="let p of products">
+            <div class="card mb-3">
+
+                <div class="card-body">
+                    <h6 class="card-subtitle text-muted">{{p.name}}</h6>
+                </div>
+                <img class="d-block user-select-none" src={{p.image}} width="100%" height="200" />
+                <div class="card-body">
+                    <p class="card-text">{{p.details}}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{p.price|currency}} 
+                        <button class="btn btn-danger">-</button> <span class="p-2">{{p.inOrder}}</span>
+                        <button class="btn btn-success">+</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<!-- </div> -->

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-register',
@@ -7,22 +9,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataSvc:DataService) { 
+   this.countries = this.dataSvc.countryList;
+    
+
+  }
 
   ngOnInit(): void {
+    
   }
-  register ={
-    email:"",
-    phone:"",
-    username:"",
-    password:"",
-    confirmPassword:"",
-    age:"",
-    gender:"",
-    country:"",
-    agreeTerms:false
+  register = {
+    email: "",
+    phone: "",
+    username: "",
+    password: "",
+    confirmPassword: "",
+    age: "",
+    gender: "",
+    country: "",
+    agreeTerms: false
   }
-  registerUser(){
+  countries = [
+    { name: "India", countryCode: "IN" },
+  { name: "United States", countryCode: "USA" }]
+  registerUser() {
     console.log(this.register);
   }
 
