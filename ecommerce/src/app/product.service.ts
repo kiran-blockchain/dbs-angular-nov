@@ -11,8 +11,8 @@ export class ProductService {
   }
   
   getProductsFromApi(){
-    return this.httpClient.get('https://raw.githubusercontent.com/mstrutt/product-list/master/products.json')
-    .toPromise();
+    return this.httpClient.get('https://raw.githubusercontent.com/mstrutt/product-list/master/products.json');
+    //.toPromise();
   }
   setProducts(data:any){
     this.products =data;

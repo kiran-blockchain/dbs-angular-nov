@@ -18,8 +18,7 @@ export class ProductsNewComponent implements OnInit {
   }
   loadProductsFromApi() {
     this.productSvc.getProductsFromApi()
-      .then((result: any) => {
-        console.log(result);
+      .subscribe((result: any) => {
         if (result.length > 0) {
           result = result.map((item: any) => {
             return { ...item, inOrder: 0 }
@@ -27,10 +26,23 @@ export class ProductsNewComponent implements OnInit {
         }
         this.productSvc.setProducts(result);
         this.fetchProductsFromService();
-      })
-      .catch((ex: any) => {
-        console.log(ex);
-      })
+      },
+        (ex) => {
+          console.log(ex);
+        });
+    // .then((result: any) => {
+    //   console.log(result);
+    //   if (result.length > 0) {
+    //     result = result.map((item: any) => {
+    //       return { ...item, inOrder: 0 }
+    //     })
+    //   }
+    //   this.productSvc.setProducts(result);
+    //   this.fetchProductsFromService();
+    // })
+    // .catch((ex: any) => {
+    //   console.log(ex);
+    // })
   }
   fetchProductsFromService() {
     this.products = this.productSvc.getProducts();
