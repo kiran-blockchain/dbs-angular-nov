@@ -15,7 +15,7 @@ novalidate
             required
             minlength="3"
             maxlength ="10"
-            pattern ="/[^a-z0-9]/"
+            pattern ="^[a-zA-Z0-9]*$"
             >
             <div *ngIf="f.submitted && username.invalid" class="text-danger mt-1">
                 <div *ngIf ="username.errors && username.errors['required']">UserName required.</div>
