@@ -9,11 +9,17 @@ import { DataService } from 'src/app/data.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private dataSvc:DataService) { 
+  constructor(private dataSvc: DataService) {
     console.log(this.dataSvc.countryList)
   }
 
   ngOnInit(): void {
   }
-
+  login = {
+    username: "",
+    password: ""
+  }
+  onSubmit(){
+    console.log(this.login);
+  }
 }
