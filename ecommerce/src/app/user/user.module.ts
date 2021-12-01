@@ -1,5 +1,5 @@
 import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { ForgotpasswordComponent } from "./forgotpassword/forgotpassword.component";
 import { LoginComponent } from "./login/login.component";
@@ -14,7 +14,7 @@ import { ResetpasswordComponent } from "./resetpassword/resetpassword.component"
          ForgotpasswordComponent,
           ResetpasswordComponent, ProfileComponent],
     providers: [],
-    imports: [FormsModule,BrowserModule],
+    imports: [FormsModule,BrowserModule,ReactiveFormsModule],
     exports: [LoginComponent, RegisterComponent, ForgotpasswordComponent, ResetpasswordComponent, ProfileComponent]
 })
 export class UserModule {
