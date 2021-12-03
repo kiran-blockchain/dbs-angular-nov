@@ -1,22 +1,31 @@
 <!-- <div class="container"> -->
-    <div class="row mt-5">
-        <div class="col-md-3" *ngFor="let p of products">
-            <div class="card mb-3">
+<div class="col-md-12">
+    <div class="col-md-8">
+        <div class="row mt-5">
+            <div class="col-md-3" *ngFor="let p of products">
+                <div class="card mb-3">
 
-                <div class="card-body">
-                    <h6 class="card-subtitle text-muted">{{p.name}}</h6>
+                    <div class="card-body">
+                        <h6 class="card-subtitle text-muted">{{p.name}}</h6>
+                    </div>
+                    <img class="d-block user-select-none" src={{p.image}} width="100%" height="200" />
+                    <div class="card-body">
+                        <p class="card-text">{{p.details}}</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">{{p.price|currency}}
+                            <button class="btn btn-danger" (click)="removeFromCart(p)">-</button> <span
+                                class="p-2">{{p.inOrder}}</span>
+                            <button class="btn btn-success" (click)="addToCart(p)">+</button>
+                            <button class="btn btn-success" (click)="viewDetails(p)">View Details</button>
+                        </li>
+                    </ul>
                 </div>
-                <img class="d-block user-select-none" src={{p.image}} width="100%" height="200" />
-                <div class="card-body">
-                    <p class="card-text">{{p.details}}</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">{{p.price|currency}} 
-                        <button class="btn btn-danger" (click)="removeFromCart(p)">-</button> <span class="p-2">{{p.inOrder}}</span>
-                        <button class="btn btn-success" (click)="addToCart(p)">+</button>
-                    </li>
-                </ul>
             </div>
         </div>
     </div>
-<!-- </div> -->
+    <div class="col-md-3">
+        <!-- </div> -->
+        <app-product-details [details]="selectedProduct"></app-product-details>
+    </div>
+</div>

@@ -61,6 +61,15 @@ export class ProductsNewComponent implements OnInit {
     }
 
   }
+  selectedProduct={
+    name:"",
+    price:"",
+    inOrder:""
+
+  }
+  viewDetails(p:any){
+    this.selectedProduct =p;
+  }
   //add to cart
   //remove from cart
   // setProducts always need to updated.

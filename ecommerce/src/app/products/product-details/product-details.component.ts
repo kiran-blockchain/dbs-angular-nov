@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 //Metadata of the component
 @Component({
@@ -7,10 +7,11 @@ import {Component} from '@angular/core';
 })
 export class ProductDetailsComponent {
     showToggler=true;
-   productDetails ={
+    @Input()
+   details ={
        name:"",
-       price:0,
-       quantity:0
+       price:"",
+       inOrder:""
    }
    handleToggle(){
        this.showToggler=!this.showToggler;
